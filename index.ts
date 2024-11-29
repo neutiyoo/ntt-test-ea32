@@ -16,7 +16,7 @@ import { getSigner } from "./helpers";
 
   (async function () {
     const wh = new Wormhole("Testnet", [solana.Platform, evm.Platform]);
-    const src = wh.getChain("BaseSepolia");
+    const src = wh.getChain("Sepolia");
     const dst = wh.getChain("Solana");
 
     const srcSigner = await getSigner(src);
@@ -30,7 +30,7 @@ import { getSigner } from "./helpers";
     });
   
     const amt = amount.units(
-      amount.parse("0.01", await srcNtt.getTokenDecimals())
+      amount.parse("0.001", await srcNtt.getTokenDecimals())
     );
   
     const xfer = () =>
